@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1543275498 source:d:\documents\systemsprogramming\huffman\bitfile.c
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	<stdio.h>
+	"bitfile.h"
+
+1543275480 d:\documents\systemsprogramming\huffman\bitfile.h
+	<stdio.h>
+
+1543272963 source:d:\documents\systemsprogramming\huffman\huff.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	<ctype.h>
+	<windows.h>
+	"huff.h"
+	"bitfile.h"
+
+1543160011 d:\documents\systemsprogramming\huffman\huff.h
+
+1543254701 source:d:\documents\systemsprogramming\huffman\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"huff.h"
+
