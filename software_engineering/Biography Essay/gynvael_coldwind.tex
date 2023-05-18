@@ -1,0 +1,210 @@
+%%
+% Template for Assignment Reports
+% 
+%
+
+\documentclass[11pt]{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx,color}
+\usepackage{anysize}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{float}
+%\usepackage[strings]{underscore}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+    }
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ right=30mm,
+ top=30mm,
+ bottom=30mm
+}
+
+%%------------------------------------------------
+%% Image and Listing code
+%%------------------------------------------------
+%% Examples for the commands in the document below
+%%
+%% includecode:
+%% \includecode{caption for table of listings}{caption for reader}{filename}
+%% - includes a file with code and adds a caption that should describe the code in some detail and a shorter caption for the table of listings
+\newcommand{\includecode}[4]{\lstinputlisting[float,floatplacement=H, caption={[#1]#2}, captionpos=b, frame=single, label={#3}]{#4}}
+
+
+%% includescalefigure:
+%% \includescalefigure{label}{short caption}{long caption}{scale}{filename}
+%% - includes a figure with a given label, a short caption for the table of contents and a longer caption that describes the figure in some detail and a scale factor 'scale'
+\newcommand{\includescalefigure}[5]{
+\begin{figure}[htb]
+\centering
+\includegraphics[width=#4\linewidth]{#5}
+\captionsetup{width=.8\linewidth} 
+\caption[#2]{#3}
+\label{#1}
+\end{figure}
+}
+
+%% includefigure:
+%% \includefigure{label}{short caption}{long caption}{filename}
+%% - includes a figure with a given label, a short caption for the table of contents and a longer caption that describes the figure in some detail
+\newcommand{\includefigure}[4]{
+\begin{figure}[htb]
+\centering
+\includegraphics{#4}
+\captionsetup{width=.8\linewidth} 
+\caption[#2]{#3}
+\label{#1}
+\end{figure}
+}
+
+
+%%------------------------------------------------
+%% Parameters
+%%------------------------------------------------
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\authorName} % Top left header
+\rhead{\moduleCode\ - \shortAssignmentTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\newcommand{\assignmentTitle}{Biography of an influential software engineer \\ - Gynvael Coldwind} % Assignment title
+\newcommand{\shortAssignmentTitle}{Gynvael Coldwind Biography} % Assignment title
+\newcommand{\moduleCode}{CS3012} 
+\newcommand{\moduleName}{Software\ Engineering} 
+\newcommand{\authorName}{Kamil Przepiórowski} % Your name ***EDIT HERE***
+\newcommand{\authorID}{17327895} % Your student ID ***EDIT HERE***
+\newcommand{\reportDate}{\printDate}
+
+
+%%------------------------------------------------
+%%	Title Page
+%%------------------------------------------------
+\title{
+\vspace{-1in}
+\begin{figure}[!ht]
+\flushleft
+\includegraphics[width=0.4\linewidth]{reduced-trinity.png}
+\end{figure}
+\vspace{-0.5cm}
+\hrulefill \\
+\vspace{0.5cm}
+\textmd{\textbf{\moduleCode\ \moduleName}}\\
+\textmd{\textbf{\assignmentTitle}}\\
+\hrulefill \\
+}
+\author{\textbf{\authorName} \\ \textbf{\authorID}}
+\date{\today}
+
+
+%%------------------------------------------------
+%% Document
+%%------------------------------------------------
+\begin{document}
+%% Defaults for listings
+\lstset{language=Java, captionpos=b, frame=single}
+\captionsetup{width=.8\linewidth} 
+
+\maketitle
+\tableofcontents
+\vspace{0.5in}
+
+%% We will skip a couple of components of reports such as abstracts, literature review, etc for the reports on assignments.
+%%------------------------------------------------
+\section{Introduction}
+\label{sec:Intro}
+
+This document is a biographical essay about a software engineer which I found to be influential and inspiring. In particular, this essay is about a Polish security and programming enthusiast who goes by the name \textbf{Gynvael Coldwind}, or \textbf{Gyn} for short. Gyn is currently employed as an IT Security Engineer at Google, however there is much more to him than just his commercial work. He is a captain emeritus of one of the top Capture The Flag (CTF) teams in the world, Dragon Sector. He is very heavily involved in discussions on forums and spreads his knowledge online, through his personal blog as well as his YouTube channels where he regularly livestreams. In 2013, Gyn was awarded a  \href{https://pwnies.com/previous/2013/most-innovative-research/}{Pwnie Award}, together with Mateusz Jurczyk, in the ”Most Innovative Research” category in the field of computer security. (The Pwnie Awards is an annual awards ceremony celebrating the achievements and failures of security researchers and the security community.)
+ 
+\section{Gynvael Coldwind - Biography}
+\subsection{Early life}
+There is not much information about his personal life available online, however he sometimes gives away bits and pieces about his life in interviews. Through listening to one of his \href{https://www.youtube.com/watch?v=hxubg2C1kXQ}{interviews}, I found out that Gyn was born in Ostrowo Wielkopolskie, Poland. His offical name is Michał (didn't give last name), however he is known everywhere as Gynvael Coldwind. \\
+
+How did Michał become Gynvael Coldwind - he needed a name for an RPG game he was playing with friends. Inspired by the The Witcher books (which are extremely popular in Poland) he came up with an Elvish name - Gynvael Coldwind. As he grew older and became more professional, he thought about switching back to his normal name, however he decided to stick with Gyn as it "lead to some comical situations". In particular, the one which stands out the most is when someone came up to him at a conference and said "you speak very good Polish", presumably assuming that Gyn wasn't Polish. Situations like these made Gyn stick with this name and he has been using it since around 2003. It's iconic, unique, and unlike a typical Polish name. \\
+
+When Gyn was 6 years old, his parents brought home their first computer, and some programming books. At the time Gyn couldn't read, but this didn't stop him from messing around with the computer and trying to learn how it works. Both of his parents were electronic engineers and this had an impact on him being fascinated by computers from a very young age. Fast forward about 10 years and Gyn was spending most of his time programming, eventually he ended up in Wrocław University of Science and Technology Computer Science.
+
+\subsection{Commercial Work}
+His first commercial experience was in a Polish Antivirus firm - \href{https://www.arcabit.pl/}{Arcabit}. As Gyn was growing up he was mostly involved in Game Development, and he thought this was going to be his area of employment. When he was in his 2nd year of studies, he got a job in security by pure coincidence. Since he was learning to code by himself throughout his whole life, he developed his own style, and in his first interaction with professional standards, his style was slated by his manager. Gyn adapted to professional standards and got really invested into the area of IT Security. He started getting involved in Security Wargames, CTFs and Bug Bounty. He later worked for \href{https://hispasec.com/en/}{Hispasec} as a researcher, pentester, reverse engineer and programmer. \\
+
+Since 2010, Gyn lives in Zurich and works for Google as a Senior Software Engineer / Information Security Engineer. Gyn's work is focused on the security of internal applications and systems. His role isn't purely technical, it's what he describes as "dual-class". He spends half his time as more of a managerial role, and the other as more of an engineer. He works closely with people who work on Google's infrastructure and is on a small team of around 5 people. Security is huge, and Gyn often jumps between different areas of security in order to not get burnt-out. He very much recommends this to everyone working in not only Security, but IT in general. On top of that, he recommends a healthy work-life balance, and to get involved in non computer related activities such as hiking etc.
+
+\subsection{Publications and Online activity}
+Coldwind authored the "\href{https://zrozumiecprogramowanie.pl/#/mainPage}{Zrozumieć Programowanie}" ("To Understand Programming") book, as well as numerous articles, publications, podcasts and lectures devoted to mentioned topics. Recently he published the first issue of '\href{https://pagedout.institute}{Paged Out!}' which is an experimental (one article == one page) free magazine about programming (especially programming tricks!), hacking, security hacking, retro computers, modern computers, electronics, demoscene, and other similar topics. It's made by the community for the community - the project is led by Gynvael Coldwind with multiple folks helping. And it's not-for-profit - this means that the issues will always be free to download, share and print. It is open for the community to submit articles, which are reviewed and potentially accepted into the next issue of the magazine. \\
+
+As mentioned previously, Gyn is heavily involved online in discussions about IT Security. He has his own blog, both in \href{https://gynvael.coldwind.pl/?blog=1&lang=pl}{Polish} and \href{https://gynvael.coldwind.pl/?blog=1&lang=en}{English} where he posts about different topics in IT Security and answers questions. He posts about any competitions happening and promotes participating in them. There are also dozens of tutorials and educational posts, not only for beginners but also on more advanced topics. Personally I've read multiple articles which he posted and found them very helpful, not only can I learn a lot from Gyn, but he also provides advice on more personal aspects of IT, such as work-life balance or dealing with stress etc. \\
+
+Gyn has two YouTube channels, one in \href{https://www.youtube.com/user/GynvaelColdwind}{Polish} and the other in \href{https://www.youtube.com/user/GynvaelEN}{English}, with a combined total of 40K subscribers. He regularly livestreams on both channels where he focuses on different topics such as code review, the Linux kernel or CTFs to name a few. He prefers livestreams over edited video as he is able to interact and sometimes learn from the viewers, and he also doesn't have to spend time on editing down his content. \\
+
+\subsection{Polish Community}
+Gynvael Coldwind is one of the top influencers in the Polish IT Security Community. He loves helping and educating people. He loves talking about what fascinates him and diving deep into the topics which interest him. Through all of his online work, like his blog or his livestreams, or his books and articles, he has reached a huge audience in Poland and made the community a lot more active. He organises an annual conference by the name of '\href{https://www.instytutpwn.pl/konferencja/pwning/}{Security Pwning}' in Poland. He also attends other Polish conferences such as '\href{https://www.secure.edu.pl/en/}{SECURE}' and tries to stay as involved as he can in the Polish community.
+
+\subsection{Dragon Sector}
+Gyn noticed that there a lot of talk about how Poland has a lot of great hackers / programmers, however the global CTF rankings had no Polish team in the top 100, excluding Dragon Sector. This angered Gyn and he famously made a post on his blog "\href{https://gynvael.coldwind.pl/?id=499}{To gdzie są ci słynni polscy hakerzy?}" (So where are all the famous polish hackers?). It gained a lot of attention and motivated the Polish CTF community to take things more seriously. Since then, many Polish CTF teams have reached high rankings, and currently there are two teams in the top 10 worldwide. \\
+
+\href{https://dragonsector.pl/}{Dragon Sector} is a Polish security Capture The Flag team, which was co-founded by Coldwind. It was created in February 2013 and currently has 17 active members. They frequently participate in both online and offline security Capture The Flag competitions, publish write-ups on CTF tasks (both on their blog and in a Polish magazine „Programista“) and sometimes even organize CTFs. Coldwind is a Captain Emeritus of the team, but is still involved with them. Dragon Sector has consistently been in the \href{https://ctftime.org/stats/2019}{top 5 worldwide} since 2013, and has inspired other Polish teams like p4 (currently rank 9 worldwide) to get involved with the competitive CTF scene.
+%%------------------------------------------------------------------------------------
+
+\section{Discussion}
+Personally I believe that Gynvael Coldwind is a truly influential engineer. He may not be extremely popular and may not have developed some revolutionary application, but I believe his contributions to the community are really valuable. In particular, as a Polish person myself, I think it's fantastic to have someone like Gyn in the community, actively trying to share his passions and educate people. The fact that he does everything in both Polish and English, to make sure neither community is excluded is truly great.\\
+
+It is very motivational to see what he has achieved, and that he is helping the people around him to try and also achieve similar things. He was at the front line of inspiring a Polish community of people who share his passion for IT Security, and my interest in application security is almost entirely because of his blog posts and livestreams.
+
+
+\section{Sources}
+About Gynvael Coldwind\\
+\url{https://gynvael.coldwind.pl/?id=50}\\
+Pwnies 2013 award\\
+\url{https://pwnies.com/previous/2013/most-innovative-research/}\\
+Post on blog about the award\\
+\url{https://gynvael.coldwind.pl/?lang=en&id=518}\\
+Polish YouTube channel\\
+\url{https://www.youtube.com/user/GynvaelColdwind}\\
+English YouTube channel\\
+\url{https://www.youtube.com/user/GynvaelEN}\\
+Interview with Gyn, in polish\\
+\url{https://www.youtube.com/watch?v=hxubg2C1kXQ}\\
+Gynvael Coldwind's book\\
+\url{https://zrozumiecprogramowanie.pl/#/mainPage}\\
+Paged Out! magazine\\
+\url{https://pagedout.institute/}\\
+Security Pwning Conference\\
+\url{https://www.instytutpwn.pl/konferencja/pwning/}\\
+Where are all the polish hackers\\
+\url{https://gynvael.coldwind.pl/?id=499}\\
+Dragon Sector website\\
+\url{https://dragonsector.pl/}\\
+Global CTF rankings\\
+\url{https://ctftime.org/stats/2019}\\
+Gynvael Coldwind's LinkedIn\\
+\url{https://www.linkedin.com/in/gynvael-coldwind-ba8607a/}
+
+%\bibliographystyle{apalike2}
+\bibliographystyle{plain}
+\bibliography{sources} 
+
+\end{document}
